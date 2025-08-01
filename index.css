@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gradient-to-b from-blue-50 to-white min-h-screen;
+}
+
+.chat-container {
+  min-height: 200px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.chat-section {
+  margin-top: 20px;
+}
+
+.chat-input-container {
+  padding: 10px 0;
+}
+
+.prose {
+  @apply text-gray-800;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.prose-invert {
+  @apply text-white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.prose h2 {
+  @apply text-insta-dark-blue font-semibold;
+}
+
+.prose-invert h2 {
+  @apply text-insta-light-blue;
+}
+
+.prose a {
+  @apply text-insta-blue underline hover:text-insta-dark-blue;
+}
+
+.prose-invert a {
+  @apply text-insta-light-blue hover:text-white;
+}
+
+.spinner-container {
+  @apply flex items-center;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 640px) {
+  .chat-container {
+    min-height: 150px;
+    @apply prose-sm;
+  }
+  .chat-input-container {
+    padding: 8px 0;
+  }
+  .chat-section {
+    margin-top: 15px;
+  }
+  .spinner {
+    @apply w-5 h-5;
+  }
+}
+
+.search-tabs {
+  @apply flex border-b-2 border-white/20;
+}
+
+.search-tab {
+  @apply px-6 py-3 cursor-pointer border-b-4 border-transparent transition-all duration-300 text-white font-medium;
+}
+
+.search-tab.active {
+  @apply border-b-white font-semibold;
+}
+
+.search-tab:hover:not(.active) {
+  @apply border-b-white/30;
+}
+
+.search-section {
+  @apply hidden;
+}
+
+.search-section.active {
+  @apply block;
+}

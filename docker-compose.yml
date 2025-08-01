@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  lawqna:
+    build:
+      context: .
+      dockerfile: Dockerfile      
+    ports:
+      - "3022:80"
+    networks:
+      - law-qna-network
+    restart: unless-stopped
+   
+networks:
+  law-qna-network:
+    driver: bridge
